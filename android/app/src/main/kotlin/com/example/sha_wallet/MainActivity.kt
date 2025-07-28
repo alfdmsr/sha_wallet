@@ -1,0 +1,5 @@
+package com.example.sha_wallet
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()
