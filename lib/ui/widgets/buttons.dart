@@ -58,7 +58,7 @@ class CustomTextButton extends StatelessWidget {
       width: width,
       height: 24,
       child: TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: TextButton.styleFrom(padding: EdgeInsets.zero),
         child: Text(title, style: greyTextStyle.copyWith(fontSize: 16)),
       ),
