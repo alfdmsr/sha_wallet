@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sha_wallet/shared/theme.dart';
 import 'dart:async';
 
-import 'package:sha_wallet/ui/pages/onboarding_page.dart';
+// import 'package:sha_wallet/ui/pages/onboarding_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -17,10 +17,7 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
 
     Timer(const Duration(seconds: 2), () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const OnboardingPage()),
-      );
+      Navigator.pushNamed(context, '/onboarding');
     });
   }
 

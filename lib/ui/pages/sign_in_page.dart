@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sha_wallet/shared/theme.dart';
 import 'package:sha_wallet/ui/widgets/buttons.dart';
+import 'package:sha_wallet/ui/widgets/forms.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -36,45 +37,10 @@ class SignInPage extends StatelessWidget {
             child: Column(
               children: [
                 // NOTE: EMAIL INPUT
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Email Address',
-                      style: blackTextStyle.copyWith(fontWeight: medium),
-                    ),
-                    const SizedBox(height: 8),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
-                ),
+                const CustomFormField(title: 'Email Address'),
                 // NOTE: PASSWORD INPUT
                 const SizedBox(height: 16),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Password',
-                      style: blackTextStyle.copyWith(fontWeight: medium),
-                    ),
-                    const SizedBox(height: 8),
-                    TextFormField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
-                ),
+                const CustomFormField(title: 'Password', obscureText: true),
                 const SizedBox(height: 8),
                 Align(
                   alignment: Alignment.centerRight,
