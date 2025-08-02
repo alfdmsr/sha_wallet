@@ -47,7 +47,16 @@ class SignInPage extends StatelessWidget {
                   child: Text('Forgot Password', style: blueTextStyle),
                 ),
                 const SizedBox(height: 30),
-                CustomFileButton(title: 'Sign In', onPressed: () {}),
+                CustomFileButton(
+                  title: 'Sign In',
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      '/home',
+                      (route) => false,
+                    );
+                  },
+                ),
               ],
             ),
           ),

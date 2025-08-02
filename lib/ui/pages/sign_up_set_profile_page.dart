@@ -4,8 +4,8 @@ import 'package:sha_wallet/ui/widgets/forms.dart';
 import 'package:sha_wallet/ui/widgets/buttons.dart';
 // import 'package:sha_wallet/ui/pages/sign_in_page.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class SignUpSetProfilePage extends StatelessWidget {
+  const SignUpSetProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,24 +37,58 @@ class SignUpPage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                // NOTE: NAME INPUT
-                const CustomFormField(title: 'Full Name'),
-                // NOTE: EMAIL INPUT
-                const CustomFormField(title: 'Email Address'),
-                // NOTE: PASSWORD INPUT
+                // Container(
+                //   width: 120,
+                //   height: 120,
+                //   decoration: BoxDecoration(
+                //     shape: BoxShape.circle,
+                //     color: lightBackgroundColor,
+                //   ),
+                //   child: Center(
+                //     child: Image.asset('assets/ic_upload.png', width: 32),
+                //   ),
+                // ),
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/img_profile.png'),
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 16),
-                const CustomFormField(title: 'Password', obscureText: true),
+                Text(
+                  'Shayna Hanna',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: medium,
+                  ),
+                ),
+                const SizedBox(height: 30),
+                CustomFormField(
+                  title: 'Set PIN (6 digit number)',
+                  obscureText: true,
+                ),
                 const SizedBox(height: 30),
                 CustomFileButton(
                   title: 'Continue',
                   onPressed: () {
-                    Navigator.pushNamed(context, '/sign-up-set-profile');
+                    Navigator.pushNamed(context, '/sign-up-set-ktp');
                   },
                 ),
               ],
             ),
           ),
           const SizedBox(height: 50),
+          CustomTextButton(
+            title: 'Sign In',
+            onPressed: () {
+              Navigator.pushNamed(context, '/sign-in');
+            },
+          ),
         ],
       ),
     );
